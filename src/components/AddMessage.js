@@ -13,7 +13,7 @@ const AddMessage = (props) => {
         }
       }}
       type="text" //the type of input field
-      ref{(node) => {
+      ref={(node) => {
         input = node
       }} />
     </section>

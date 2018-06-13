@@ -2,7 +2,7 @@
 import * as types from '../constants/ActionTypes';
 
 let nextMessageId = 0 //nextMessageId will be used for all users' message logs.
-const nextUserId = 0
+let nextUserId = 0
 
 // addMessage is for when YOU the user is adding a message.
 export const addMessage = (message, author) => ({
