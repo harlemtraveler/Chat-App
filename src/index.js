@@ -9,6 +9,7 @@ import { createStore } from 'redux';
 import { addUser } from './actions';
 // chat (the reducer) is the App's data
 import chat from './reducers';
+import { setupSocket } from './sockets/index';
 // The store var calls "createStore" and passes our data for storage
 const store = createStore(chat)
 
