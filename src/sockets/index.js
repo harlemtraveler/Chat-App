@@ -1,8 +1,8 @@
 import * as types from '../constants/ActionTypes';
-import { addUser, messageRecieved, populateUsersList} from '../actions/index.js';
+import { addUser, messageRecieved, populateUsersList} from '../actions';
 
 const setupSocket = (dispatch, username) => {
-  const socket = new WebSocket('ws:http//localhost:9999 ')
+  const socket = new WebSocket('ws://localhost:9999')
 
   socket.onopen = () => {
     socket.send(JSON.stringify({
@@ -12,7 +12,10 @@ const setupSocket = (dispatch, username) => {
   }
   socket.onmessage = (event) => {
     const data = JSON.parse(event.data)
-    switch (data.types) {
+    // BE SURE TO TYPE "data.type" (singular)
+    // A BIG ISSUE THAT PREVENTED USERNAME POPULATION
+    // WAS A PLURALIZE "types" BELOW IN SWITCH STATEMENT!!!
+    switch (data.type) {
       case types.ADD_MESSAGE:
         // dispatching the properties of the message that was recieved.
         dispatch(messageRecieved(data.message, data.author))
