@@ -12,7 +12,7 @@ const broadcast = (data, ws) => {
   })
 }
 
-// The server only does two thinds, add a user or add a message.
+// The server only does two things, add a user or add a message.
 wss.on('connection', (ws) => {
   let index
   ws.on('message', (message) => {
@@ -86,4 +86,8 @@ wss.on('connection', (ws) => {
   string becasue the server isn't able to read anything from the
   constants folder. This is because the cline t and server are completely
   seperated.
+*/
+
+/* TO START THE APP RUN:
+    node app.js
 */
